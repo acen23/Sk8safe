@@ -1,5 +1,5 @@
 # App Design Notes
-### Views
+### Views ###
 - HomeView
     - 
 - ContentView
