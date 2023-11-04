@@ -1,7 +1,7 @@
 # App Design Notes
 ### Views
 - HomeView
--     App title
+  - App title
 -     
 - ContentView
 - 
