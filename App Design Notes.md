@@ -1,6 +1,7 @@
 # App Design Notes
-### Views ###
+### Views
 - HomeView
-    - 
+-     App title
+-     
 - ContentView
 - 
