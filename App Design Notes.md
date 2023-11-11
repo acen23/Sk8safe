@@ -6,7 +6,21 @@
   - View data button (DataView)
   - Settings button (DebugView)
 - DataView
+  - Show map with user's location by using MapKit library
+  - Use getUserLocation()
 - DebugView
 ### Models
 - AppModel
   - Everything(?)
+  - Will need to record and store data in the form of (CLLocation,int) pairs in a HashMap
+- LocationHandler
+  - CoreLocation library framework
+  - getUserLocation(completion: @escaping ((CLLocation) -> void))
+
+Need to add "Privacy - Location When In Usage Description (maybe a different one if we want background tracking while app is open?)
+
+Links:
+- https://www.youtube.com/watch?v=MNF13IEn6vI
+- https://developer.apple.com/documentation/corelocation/cllocation
+- https://realm.io/best-ios-database/
+- https://www.mongodb.com/databases/what-is-an-object-oriented-database?_ga=2.49260454.1682316564.1699321288-1476251518.1699321288
