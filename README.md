@@ -1,4 +1,4 @@
-# BumpDetection
+# SK8SAFE: Bump Detection Device + App
 ECE 196 Team Project
 
 This project is created by Will, Danny, and Andrew.
