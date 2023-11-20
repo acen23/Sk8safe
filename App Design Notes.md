@@ -10,12 +10,14 @@
   - Use getUserLocation()
 - DebugView
 ### Models
-- AppModel
-  - Everything(?)
+- DataModel
   - Will need to record and store data in the form of (CLLocation,int) pairs in a HashMap
-- LocationHandler
+- LocationHandler (may be merged into DataModel)
   - CoreLocation library framework
   - getUserLocation(completion: @escaping ((CLLocation) -> void))
+- BTModel
+  - Handles bluetooth connection behavior
+  - Conforms to protocol of DataModel
 
 Need to add "Privacy - Location When In Usage Description (maybe a different one if we want background tracking while app is open?)
 
