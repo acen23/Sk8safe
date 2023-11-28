@@ -11,7 +11,7 @@ import SwiftUI
 struct Sk8safeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

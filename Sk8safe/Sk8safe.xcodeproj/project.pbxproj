@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		49CFAE2A2B16985700C0D700 /* Sk8safeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE292B16985700C0D700 /* Sk8safeApp.swift */; };
-		49CFAE2C2B16985700C0D700 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE2B2B16985700C0D700 /* ContentView.swift */; };
 		49CFAE2E2B16985A00C0D700 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CFAE2D2B16985A00C0D700 /* Assets.xcassets */; };
 		49CFAE312B16985A00C0D700 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CFAE302B16985A00C0D700 /* Preview Assets.xcassets */; };
 		49CFAE3B2B16985A00C0D700 /* Sk8safeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE3A2B16985A00C0D700 /* Sk8safeTests.swift */; };
 		49CFAE452B16985A00C0D700 /* Sk8safeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE442B16985A00C0D700 /* Sk8safeUITests.swift */; };
 		49CFAE472B16985A00C0D700 /* Sk8safeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE462B16985A00C0D700 /* Sk8safeUITestsLaunchTests.swift */; };
-		49CFAE562B16B07400C0D700 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE552B16B07400C0D700 /* PanelView.swift */; };
+		49CFAE562B16B07400C0D700 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE552B16B07400C0D700 /* HomeView.swift */; };
 		49CFAE582B16B0FC00C0D700 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE572B16B0FC00C0D700 /* DataModel.swift */; };
 		49CFAE5A2B16B10700C0D700 /* BTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE592B16B10700C0D700 /* BTModel.swift */; };
 		49CFAE5C2B16B11600C0D700 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5B2B16B11600C0D700 /* LocationModel.swift */; };
+		49CFAE5E2B16B30D00C0D700 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5D2B16B30D00C0D700 /* DataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		49CFAE262B16985700C0D700 /* Sk8safe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sk8safe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CFAE292B16985700C0D700 /* Sk8safeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sk8safeApp.swift; sourceTree = "<group>"; };
-		49CFAE2B2B16985700C0D700 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		49CFAE2D2B16985A00C0D700 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49CFAE302B16985A00C0D700 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49CFAE362B16985A00C0D700 /* Sk8safeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sk8safeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,10 +47,11 @@
 		49CFAE402B16985A00C0D700 /* Sk8safeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sk8safeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CFAE442B16985A00C0D700 /* Sk8safeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sk8safeUITests.swift; sourceTree = "<group>"; };
 		49CFAE462B16985A00C0D700 /* Sk8safeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sk8safeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		49CFAE552B16B07400C0D700 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		49CFAE552B16B07400C0D700 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		49CFAE572B16B0FC00C0D700 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		49CFAE592B16B10700C0D700 /* BTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTModel.swift; sourceTree = "<group>"; };
 		49CFAE5B2B16B11600C0D700 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		49CFAE5D2B16B30D00C0D700 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 		49CFAE532B16AE9100C0D700 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				49CFAE2B2B16985700C0D700 /* ContentView.swift */,
-				49CFAE552B16B07400C0D700 /* PanelView.swift */,
+				49CFAE552B16B07400C0D700 /* HomeView.swift */,
+				49CFAE5D2B16B30D00C0D700 /* DataView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,10 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49CFAE562B16B07400C0D700 /* PanelView.swift in Sources */,
+				49CFAE5E2B16B30D00C0D700 /* DataView.swift in Sources */,
+				49CFAE562B16B07400C0D700 /* HomeView.swift in Sources */,
 				49CFAE5A2B16B10700C0D700 /* BTModel.swift in Sources */,
 				49CFAE582B16B0FC00C0D700 /* DataModel.swift in Sources */,
-				49CFAE2C2B16985700C0D700 /* ContentView.swift in Sources */,
 				49CFAE5C2B16B11600C0D700 /* LocationModel.swift in Sources */,
 				49CFAE2A2B16985700C0D700 /* Sk8safeApp.swift in Sources */,
 			);
@@ -377,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
