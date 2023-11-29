@@ -10,7 +10,7 @@
   - Use getUserLocation()
 - DebugView
 ### Models
-- DataModel
+- DataModel (OVERARCHING MODEL) (READS FROM LocationModel AND BTModel)
   - Will need to record and store data in the form of (CLLocation,int) pairs in a HashMap
 - LocationHandler (may be merged into DataModel)
   - CoreLocation library framework
