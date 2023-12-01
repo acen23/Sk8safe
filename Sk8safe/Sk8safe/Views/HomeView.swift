@@ -10,8 +10,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var bt = BTModel()
     var body: some View {
-        Text("Sk8safe")
+        Circle()
+            .foregroundColor(bt.connected ? .green : .red)
+        // TODO: add text label to the circle indicator
+        
     }
 }
 
