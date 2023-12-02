@@ -10,13 +10,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var bt = BTModel()
+    @StateObject var dm = DataModel()
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Circle()
-                    //.foregroundColor(bt.connected ? .green : .red)
+                    //.foregroundColor(dm.connected ? .green : .red)
                     .foregroundColor(.green) // DELETE LATER
                     .frame(width: 20, height: 20)
                     Text("Connected")
@@ -27,8 +27,8 @@ struct HomeView: View {
                   Text("Record")
                 }
                 .buttonStyle(.borderedProminent)
-                //.disabled(bt.connected)
-                NavigationLink(destination: DataView().environmentObject(bt)) {
+                //.disabled(dm.connected)
+                NavigationLink(destination: DataView().environmentObject(dm)) {
                     Text("View Data")
                 }
             }
