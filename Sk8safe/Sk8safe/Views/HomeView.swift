@@ -12,10 +12,28 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var bt = BTModel()
     var body: some View {
-        Circle()
-            .foregroundColor(bt.connected ? .green : .red)
-        // TODO: add text label to the circle indicator
-        
+        NavigationView {
+            VStack {
+                HStack {
+                    Circle()
+                    //.foregroundColor(bt.connected ? .green : .red)
+                    .foregroundColor(.green) // DELETE LATER
+                    .frame(width: 20, height: 20)
+                    Text("Connected")
+                }
+                
+                Button {
+                } label: {
+                  Text("Record")
+                }
+                .buttonStyle(.borderedProminent)
+                //.disabled(bt.connected)
+                NavigationLink(destination: DataView().environmentObject(bt)) {
+                    Text("View Data")
+                }
+            }
+        }
+        .navigationViewStyle(.stack)
     }
 }
 
