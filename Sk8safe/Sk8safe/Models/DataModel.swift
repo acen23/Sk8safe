@@ -14,4 +14,13 @@ class DataModel: ObservableObject{
     // Composes both models
     private let bt = BTModel()
     private let lm = LocationModel()
+    
+    // Composed variables from BTModel
+    @Published var connected: Bool = false
+    @Published var loaded: Bool = false
+    
+    init() { // Add "override" if inheriting
+        self.connected = bt.connected
+        self.loaded = bt.loaded
+    }
 }
