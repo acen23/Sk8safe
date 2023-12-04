@@ -12,7 +12,7 @@ import SwiftUI
 
 class DataModel: ObservableObject{
     // Composes both models
-    private let bt = BTModel() // MAY NOT NEED TO COMPOSE BTModel
+    // private let bt = BTModel() // MAY NOT NEED TO COMPOSE BTModel
     private let lm = LocationModel()
     
     
