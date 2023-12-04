@@ -30,8 +30,13 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
     ]
     
     // UI interface variables
-    @Published var connected: Bool = false
-    @Published var loaded: Bool = false
+    var connected: Bool = false {
+        didSet {
+                // React to changes in composedModelProperty
+                print("Connected property changed to: \(connected)")
+        }
+    }
+    var loaded: Bool = false
     
     override init() {
         super.init()

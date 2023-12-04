@@ -16,8 +16,7 @@ struct HomeView: View {
             VStack {
                 HStack {
                     Circle()
-                    //.foregroundColor(dm.connected ? .green : .red)
-                    .foregroundColor(.green) // DELETE LATER
+                    .foregroundColor(dm.connected ? .green : .red)
                     .frame(width: 20, height: 20)
                     Text("Connected")
                 }
@@ -27,9 +26,19 @@ struct HomeView: View {
                   Text("Record")
                 }
                 .buttonStyle(.borderedProminent)
-                //.disabled(dm.connected)
+                .disabled(!dm.connected)
                 NavigationLink(destination: DataView().environmentObject(dm)) {
                     Text("View Data")
+                }
+                Button(action:{
+                    print(dm.connected)
+                } ) {
+                    Text("TEST CONNECT")
+                }
+                Button(action:{
+                    dm.updateComposedModelProperty(newValue: !dm.connected)
+                }){
+                    Text("CHANGE CONNECT")
                 }
             }
         }

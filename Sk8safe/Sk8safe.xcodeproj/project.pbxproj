@@ -452,6 +452,8 @@
 				DEVELOPMENT_TEAM = KG789L7T39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Grant Bluetooth access";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Can this app communicate with Bluetooth peripherals?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +483,8 @@
 				DEVELOPMENT_TEAM = KG789L7T39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Grant Bluetooth access";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Can this app communicate with Bluetooth peripherals?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
