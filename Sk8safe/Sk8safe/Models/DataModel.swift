@@ -12,13 +12,7 @@ import SwiftUI
 
 class DataModel: ObservableObject{
     // Composes both models
-    private var bt = BTModel() {
-        didSet {
-            // React to changes in the composed model itself
-            print("Composed model changed")
-            self.connected = bt.connected
-        }
-    }
+    @Published var bt = BTModel()
     
     private let lm = LocationModel()
     
