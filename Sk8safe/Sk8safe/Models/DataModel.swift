@@ -12,18 +12,8 @@ import SwiftUI
 
 class DataModel: ObservableObject{
     // Composes both models
-    @Published var bt = BTModel()
-    
+    private let bt = BTModel() // MAY NOT NEED TO COMPOSE BTModel
     private let lm = LocationModel()
     
-    // Composed variables from BTModel
-    @Published var connected: Bool = false
     
-    init() { // Add "override" if inheriting
-        self.connected = bt.connected
-    }
-    
-    func updateComposedModelProperty(newValue: Bool) {
-        bt.connected = newValue
-    }
 }

@@ -11,12 +11,13 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var dm = DataModel()
+    @StateObject var bt = BTModel()
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Circle()
-                        .foregroundColor(dm.bt.connected ? .green : .red)
+                        .foregroundColor(bt.connected ? .green : .red)
                     .frame(width: 20, height: 20)
                     Text("Connected")
                 }
@@ -26,17 +27,17 @@ struct HomeView: View {
                   Text("Record")
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(!dm.bt.connected)
+                .disabled(!bt.connected)
                 NavigationLink(destination: DataView().environmentObject(dm)) {
                     Text("View Data")
                 }
-                Button(action:{
-                    print(dm.bt.connected)
+                Button(action:{ // GET RID OF THIS BUTTON AFTER TESTING
+                    print(bt.connected)
                 } ) {
                     Text("TEST CONNECT")
                 }
-                Button(action:{
-                    dm.updateComposedModelProperty(newValue: !dm.bt.connected)
+                Button(action:{ // GET RID OF THIS BUTTON AFTER TESTING
+                    bt.connected = !bt.connected
                 }){
                     Text("CHANGE CONNECT")
                 }
