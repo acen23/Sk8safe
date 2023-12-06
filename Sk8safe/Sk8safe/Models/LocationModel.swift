@@ -13,10 +13,13 @@ import CoreLocation
 class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     // CL objects
     var locationManager: CLLocationManager?
+    var locations: [CLLocation]
     
     override init() {
+        locations = []
         super.init()
         locationManager = CLLocationManager()
+        //locationManager?.distanceFilter = 10 // Use this value if the location points are too close together
         locationManager?.delegate = self
         locationManager?.allowsBackgroundLocationUpdates = true
         locationManager?.showsBackgroundLocationIndicator = true
@@ -57,10 +60,12 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
         locationManager?.stopUpdatingLocation()
     }
     
-    // We implement method locationManager(_:didUpdateLocations:) in our view controller to get location information, since it only one-time location, we will get the last item from an array of locations
+    // We implement method locationManager(_:didUpdateLocations:) in our view controller to get location information, since it's only one-time location, we will get the last item from an array of locations
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
+        // Update LocationModel's own location information
+        self.locations[0] = location
     }
     
     // Implemented error handling
