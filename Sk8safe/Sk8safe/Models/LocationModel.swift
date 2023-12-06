@@ -14,6 +14,7 @@ import MapKit
 class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     // CL objects
     var locationManager: CLLocationManager?
+    var currCoord = CLLocationCoordinate2D()
     var currRegion = MKCoordinateRegion()
     
     override init() {
@@ -63,12 +64,14 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     // We implement method locationManager(_:didUpdateLocations:) in our view controller to get location information, since it's only one-time location, we will get the last item from an array of locations
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
-        // Update LocationModel's own location information
+        /*print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")*/
+        // Update LocationModel's centered region
         currRegion = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude),
             span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
         )
+        // Update current coordinates
+        currCoord = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
     
     // Implemented error handling

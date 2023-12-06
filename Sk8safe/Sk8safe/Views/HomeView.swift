@@ -42,7 +42,7 @@ struct HomeView: View {
                     Text("CHANGE CONNECT")
                 }
                 Button(action:{
-                    dm.requestLocation()
+                    dm.printLocation()
                 }){
                     Text("Check location")
                 }

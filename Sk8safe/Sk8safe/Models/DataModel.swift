@@ -22,8 +22,8 @@ class DataModel: ObservableObject{
         currRegion = lm.currRegion // ensures that current region tracked on the map is initialized once
     }
     
-    func requestLocation(){
-        lm.requestOnTimeLocation()
+    func printLocation(){
+        print("Latitude: \(lm.currCoord.latitude), Longitude: \(lm.currCoord.longitude)")
     }
     
     struct Bump: Identifiable {
