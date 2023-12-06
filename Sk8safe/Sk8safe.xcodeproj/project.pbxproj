@@ -19,6 +19,7 @@
 		49CFAE5C2B16B11600C0D700 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5B2B16B11600C0D700 /* LocationModel.swift */; };
 		49CFAE5E2B16B30D00C0D700 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5D2B16B30D00C0D700 /* DataView.swift */; };
 		49CFAE612B1FF4D100C0D700 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		49CFAE642B20867900C0D700 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CFAE632B20867900C0D700 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		49CFAE5D2B16B30D00C0D700 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		49CFAE622B1FF7FD00C0D700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		49CFAE632B20867900C0D700 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CFAE642B20867900C0D700 /* MapKit.framework in Frameworks */,
 				49CFAE612B1FF4D100C0D700 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +167,7 @@
 		49CFAE5F2B1FF4D100C0D700 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49CFAE632B20867900C0D700 /* MapKit.framework */,
 				49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */,
 			);
 			name = Frameworks;

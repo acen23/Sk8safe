@@ -7,12 +7,14 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 struct DataView: View {
-    
     @StateObject var dm = DataModel()
+    @StateObject var lm = LocationModel()
     var body: some View {
-        Text("Hello, World!")
+        Map(coordinateRegion: $lm.currRegion, showsUserLocation: true, userTrackingMode: .constant(.follow))
+                    .frame(width: 400, height: 300)
     }
 }
 

@@ -10,6 +10,7 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import MapKit
 
 class DataModel: ObservableObject{
     // Composes both models

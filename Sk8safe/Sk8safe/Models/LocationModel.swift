@@ -9,14 +9,14 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     // CL objects
     var locationManager: CLLocationManager?
-    var locations: [CLLocation]
+    @Published var currRegion = MKCoordinateRegion()
     
     override init() {
-        locations = []
         super.init()
         locationManager = CLLocationManager()
         //locationManager?.distanceFilter = 10 // Use this value if the location points are too close together
@@ -65,7 +65,10 @@ class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
         guard let location = locations.last else { return }
         print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
         // Update LocationModel's own location information
-        self.locations[0] = location
+        currRegion = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude),
+            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+        )
     }
     
     // Implemented error handling
