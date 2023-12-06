@@ -160,7 +160,7 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
     }
     
     func report(boo: Bool){
-        
+        print("Reported \(boo)")
     }
     
     // TODO: Change handling of receiving data

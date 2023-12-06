@@ -29,18 +29,20 @@ class DataModel: ObservableObject{
     
     @Published var currRegion = MKCoordinateRegion()
     @Published var annotations: [Bump]
+    @Published var recordBoo = false
     
     init(rep: Report){
         self.rep = rep
         currRegion = lm.currRegion // ensures that current region tracked on the map is initialized once
         annotations = []
+        recordBoo = false
     }
     
     func report_in_BTModel(boo: Bool){
         // use boo to check if bump detected or not
         // report will be called everytime a bump is detected to update boo
         rep.report(boo: boo)
-        if(boo){
+        if(boo && recordBoo){
             addBump()
         }
     }
@@ -50,6 +52,7 @@ class DataModel: ObservableObject{
     }
     
     func addBump(){
+        print("Added bump!")
         annotations.append(Bump(coordinate: lm.currCoord))
     }
 }

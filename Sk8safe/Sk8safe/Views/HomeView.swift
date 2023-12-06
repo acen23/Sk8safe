@@ -31,13 +31,22 @@ struct HomeView: View {
                     .frame(width: 20, height: 20)
                     Text("Connected")
                 }
-                
-                Button {
-                } label: {
+                Button(action:{
+                    dm.recordBoo = true
+                    print("Recording...")
+                }){
                   Text("Record")
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(!bt.connected)
+                .disabled(!bt.connected || dm.recordBoo)
+                Button(action:{
+                    dm.recordBoo = false
+                    print("Stopped recording")
+                }){
+                  Text("Stop")
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(!dm.recordBoo)
                 NavigationLink(destination: DataView().environmentObject(dm)) {
                     Text("View Data")
                 }
