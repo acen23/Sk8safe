@@ -41,6 +41,11 @@ struct HomeView: View {
                 }){
                     Text("CHANGE CONNECT")
                 }
+                Button(action:{
+                    dm.requestLocation()
+                }){
+                    Text("Check location")
+                }
             }
         }
         .navigationViewStyle(.stack)

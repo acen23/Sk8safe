@@ -18,6 +18,7 @@
 		49CFAE5A2B16B10700C0D700 /* BTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE592B16B10700C0D700 /* BTModel.swift */; };
 		49CFAE5C2B16B11600C0D700 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5B2B16B11600C0D700 /* LocationModel.swift */; };
 		49CFAE5E2B16B30D00C0D700 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5D2B16B30D00C0D700 /* DataView.swift */; };
+		49CFAE612B1FF4D100C0D700 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		49CFAE592B16B10700C0D700 /* BTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTModel.swift; sourceTree = "<group>"; };
 		49CFAE5B2B16B11600C0D700 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		49CFAE5D2B16B30D00C0D700 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		49CFAE622B1FF7FD00C0D700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CFAE612B1FF4D100C0D700 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 				49CFAE392B16985A00C0D700 /* Sk8safeTests */,
 				49CFAE432B16985A00C0D700 /* Sk8safeUITests */,
 				49CFAE272B16985700C0D700 /* Products */,
+				49CFAE5F2B1FF4D100C0D700 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +107,7 @@
 		49CFAE282B16985700C0D700 /* Sk8safe */ = {
 			isa = PBXGroup;
 			children = (
+				49CFAE622B1FF7FD00C0D700 /* Info.plist */,
 				49CFAE292B16985700C0D700 /* Sk8safeApp.swift */,
 				49CFAE532B16AE9100C0D700 /* Views */,
 				49CFAE542B16AE9A00C0D700 /* Models */,
@@ -153,6 +159,14 @@
 				49CFAE5B2B16B11600C0D700 /* LocationModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		49CFAE5F2B1FF4D100C0D700 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,8 +466,11 @@
 				DEVELOPMENT_TEAM = KG789L7T39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sk8safe/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Grant Bluetooth access";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Can this app communicate with Bluetooth peripherals?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location for mapping";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location for mapping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -483,8 +500,11 @@
 				DEVELOPMENT_TEAM = KG789L7T39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sk8safe/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Grant Bluetooth access";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Can this app communicate with Bluetooth peripherals?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location for mapping";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location for mapping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
