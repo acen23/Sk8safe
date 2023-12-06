@@ -36,11 +36,11 @@ struct HomeView: View {
                 } ) {
                     Text("TEST CONNECT")
                 }
-                Button(action:{ // GET RID OF THIS BUTTON AFTER TESTING
+                /*Button(action:{ // GET RID OF THIS BUTTON AFTER TESTING
                     bt.connected = !bt.connected
                 }){
                     Text("CHANGE CONNECT")
-                }
+                }*/
                 Button(action:{
                     dm.printLocation()
                 }){

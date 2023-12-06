@@ -11,9 +11,13 @@ import MapKit
 
 struct DataView: View {
     @StateObject var dm = DataModel()
+    
     var body: some View {
-        Map(coordinateRegion: $dm.currRegion, showsUserLocation: true, userTrackingMode: .constant(.follow))
-                    .frame(width: 400, height: 300)
+        Map(coordinateRegion: $dm.currRegion, showsUserLocation: true,
+            userTrackingMode: .constant(.follow), annotationItems: dm.annotations) { annotation in
+                    MapPin(coordinate: annotation.coordinate, tint: .blue)
+        }
+        .frame(width: 400, height: 300)
     }
 }
 
