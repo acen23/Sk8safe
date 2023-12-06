@@ -15,6 +15,9 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Image("logo")
+                    .resizable()
+                    .frame(width: 100, height: 100)
                 HStack {
                     Circle()
                         .foregroundColor(bt.connected ? .green : .red)
@@ -47,6 +50,8 @@ struct HomeView: View {
                     Text("Check location")
                 }
             }
+            .navigationBarTitle(Text("Sk8safe"))
+            
         }
         .navigationViewStyle(.stack)
     }

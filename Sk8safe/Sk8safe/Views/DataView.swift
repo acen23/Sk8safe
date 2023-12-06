@@ -10,8 +10,7 @@ import SwiftUI
 import MapKit
 
 struct DataView: View {
-    @StateObject var dm = DataModel()
-    
+    @EnvironmentObject var dm: DataModel
     var body: some View {
         Map(coordinateRegion: $dm.currRegion, showsUserLocation: true,
             userTrackingMode: .constant(.follow), annotationItems: dm.annotations) { annotation in
