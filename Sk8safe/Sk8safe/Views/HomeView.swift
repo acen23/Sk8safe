@@ -10,8 +10,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var dm = DataModel()
-    @StateObject var bt = BTModel()
+    @StateObject var dm: DataModel
+    @StateObject var bt: BTModel
+    
+    init(){
+        let bt = BTModel()
+        _bt = StateObject(wrappedValue: bt)
+        _dm = StateObject(wrappedValue: DataModel(rep: bt as Report))
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -44,11 +51,6 @@ struct HomeView: View {
                 }){
                     Text("CHANGE CONNECT")
                 }*/
-                Button(action:{
-                    dm.printLocation()
-                }){
-                    Text("Check location")
-                }
             }
             .navigationBarTitle(Text("Sk8safe"))
             

@@ -17,6 +17,16 @@ struct DataView: View {
                     MapPin(coordinate: annotation.coordinate, tint: .blue)
         }
         .frame(width: 400, height: 300)
+        Button(action:{
+            dm.printLocation()
+        }){
+            Text("Check location")
+        }
+        Button(action:{ // DELETE AFTER TESTING
+            dm.addBump()
+        }){
+            Text("Add bump")
+        }
     }
 }
 

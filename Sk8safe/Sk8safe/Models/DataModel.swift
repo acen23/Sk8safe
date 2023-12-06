@@ -18,16 +18,31 @@ struct Bump: Identifiable {
     // let freq: Bool // true if heavy frequency, false if not often
 }
 
+protocol Report {
+    func report(boo: Bool)
+}
+
 class DataModel: ObservableObject{
-    // Composes both models
-    private let bt = BTModel() // MAY NOT NEED TO COMPOSE BTModel
+    // Composes LocationModel
     private let lm = LocationModel()
+    private let rep: Report
+    
     @Published var currRegion = MKCoordinateRegion()
     @Published var annotations: [Bump]
     
-    init(){
+    init(rep: Report){
+        self.rep = rep
         currRegion = lm.currRegion // ensures that current region tracked on the map is initialized once
         annotations = []
+    }
+    
+    func report_in_BTModel(boo: Bool){
+        // use boo to check if bump detected or not
+        // report will be called everytime a bump is detected to update boo
+        rep.report(boo: boo)
+        if(boo){
+            addBump()
+        }
     }
     
     func printLocation(){

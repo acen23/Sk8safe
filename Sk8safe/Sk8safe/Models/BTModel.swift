@@ -11,13 +11,12 @@ import Foundation
 import SwiftUI
 import CoreBluetooth
 
-class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate, Report {
     // CB objects
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral?
     
     // backend color components TODO: CHANGE THIS
-    @Published var boo: Bool = true
     var c: CGFloat = 0
     
     // UUID and characteristic organization
@@ -132,9 +131,9 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
             loaded = true
             
             // TODO: CHECK IF WE NEED UPDATE PERIODIC
-            /*// spawn daemon updater thread
-            DispatchQueue.global().async {
-                self.updatePeriodic()
+            // spawn daemon updater thread
+            /*DispatchQueue.global().async {
+                self.report()
             }*/
         }
     }
@@ -145,11 +144,11 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
         if(characteristic_key[characteristic.uuid] == "SENSE"){
             // TODO: Change handling of receiving data
             c = loadVal(data: data)
-            if(c == 0){
-                boo = false
+            if(c != 0){
+                report(boo: true)
             }
             else{
-                boo = true
+                report(boo: false)
             }
         }
         else{
@@ -158,6 +157,10 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
             
         // inform UI to update to reflect computed property (color) change
         objectWillChange.send()
+    }
+    
+    func report(boo: Bool){
+        
     }
     
     // TODO: Change handling of receiving data
