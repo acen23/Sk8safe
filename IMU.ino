@@ -21,7 +21,7 @@ uint8_t ON = 0;
 Adafruit_MPU6050 mpu;
 BLECharacteristic *dataCharacteristic;
 unsigned long previousMillis = 0;  // Variable to store the last time the timer was updated
-unsigned long interval = 1000;    // Interval for the timer in milliseconds (1 second in this case)
+unsigned long interval = 2000;    // Interval for the timer in milliseconds (1 second in this case)
 
 
 class ServerCallbacks: public BLEServerCallbacks {
@@ -109,30 +109,26 @@ void loop() {
   USBSerial.print(z_acc);
   data[2] = z_acc;
   USBSerial.print(" ");
-  delay(100);
   int vibration = analogRead(VIB);
-  if(vibration!=0){
-    USBSerial.println(vibration);
-    data[3] = vibration;
-    uint8_t byteArray[sizeof(data) * sizeof(float)]; // Create byte array to hold the converted data
+  USBSerial.print(vibration);
+  USBSerial.print(" ");
+  if(vibration>200){
+    if(z_acc < 7 || z_acc > 12){
+      USBSerial.print(100);
+      USBSerial.print(" ");
+      data[3] = vibration;
+      uint8_t byteArray[sizeof(data) * sizeof(float)]; // Create byte array to hold the converted data
 
-    // Convert float array to byte array
-    for (size_t i = 0; i < sizeof(data); i++) {
-      memcpy(&byteArray[i * sizeof(float)], &data[i], sizeof(float));
+      // Convert float array to byte array
+      for (size_t i = 0; i < sizeof(data); i++) {
+        memcpy(&byteArray[i * sizeof(float)], &data[i], sizeof(float));
+      }
+      dataCharacteristic->setValue(byteArray, sizeof(byteArray));
     }
-    
-    dataCharacteristic->setValue(byteArray, sizeof(byteArray));
-
-    if (millis() - previousMillis >= interval) {
-      previousMillis = millis();
-      
-
-    }
-
   } else {
     USBSerial.println(0);
   }
-
-
+  USBSerial.println("");
+  delay(100);
 
 }
