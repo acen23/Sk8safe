@@ -14,7 +14,7 @@ import MapKit
 class LocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     // CL objects
     var locationManager: CLLocationManager?
-    @Published var currRegion = MKCoordinateRegion()
+    var currRegion = MKCoordinateRegion()
     
     override init() {
         super.init()
