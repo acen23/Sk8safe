@@ -42,12 +42,12 @@ struct HomeView: View {
                 .disabled(!dm.recordBoo)
                 NavigationLink(destination: DataView().environmentObject(dm)) {
                     Text("View Data")
-                }
+                }/*
                 Button(action:{ // GET RID OF THIS BUTTON AFTER TESTING
                     print(dm.connected)
                 } ) {
                     Text("TEST CONNECT")
-                }
+                }*/
                 /*Button(action:{ // GET RID OF THIS BUTTON AFTER TESTING
                     bt.connected = !bt.connected
                 }){

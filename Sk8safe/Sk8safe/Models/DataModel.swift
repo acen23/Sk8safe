@@ -39,7 +39,6 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
     // UI interface variables
     @Published var connected: Bool = false
     var loaded: Bool = false
-    var boo: Bool = false
     
     // Composes LocationModel
     private let lm = LocationModel()
@@ -61,7 +60,7 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
     }
     
     func addBump(){
-        if(boo && recordBoo){
+        if(recordBoo){
             print("Added bump!")
             annotations.append(Bump(coordinate: lm.currCoord))
         }
@@ -162,9 +161,9 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
             
             // TODO: CHECK IF WE NEED UPDATE PERIODIC
             // spawn daemon updater thread
-            DispatchQueue.global().async {
+            /*DispatchQueue.global().async {
                 self.addBump()
-            }
+            }*/
         }
     }
     
@@ -175,10 +174,12 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
             // TODO: Change handling of receiving data
             c = loadVal(data: data)
             if(c != 0){
-                boo = true
+                addBump()
+                print("Sent true")
             }
             else{
-                boo = false
+                addBump()
+                print("Sent false")
             }
         }
         else{
