@@ -66,6 +66,10 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
         }
     }
     
+    func clear(){
+        annotations.removeAll()
+    }
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
         case .poweredOff:
