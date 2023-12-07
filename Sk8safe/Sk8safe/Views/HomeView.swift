@@ -10,14 +10,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var dm: DataModel
-    @StateObject var bt: BTModel
-    
-    init(){
-        let bt = BTModel()
-        _bt = StateObject(wrappedValue: bt)
-        _dm = StateObject(wrappedValue: DataModel(rep: bt as Report))
-    }
+    @StateObject var dm = DataModel()
     
     var body: some View {
         NavigationView {
@@ -27,7 +20,7 @@ struct HomeView: View {
                     .frame(width: 100, height: 100)
                 HStack {
                     Circle()
-                        .foregroundColor(bt.connected ? .green : .red)
+                        .foregroundColor(dm.connected ? .green : .red)
                     .frame(width: 20, height: 20)
                     Text("Connected")
                 }
@@ -38,7 +31,7 @@ struct HomeView: View {
                   Text("Record")
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(!bt.connected || dm.recordBoo)
+                .disabled(!dm.connected || dm.recordBoo)
                 Button(action:{
                     dm.recordBoo = false
                     print("Stopped recording")
@@ -51,7 +44,7 @@ struct HomeView: View {
                     Text("View Data")
                 }
                 Button(action:{ // GET RID OF THIS BUTTON AFTER TESTING
-                    print(bt.connected)
+                    print(dm.connected)
                 } ) {
                     Text("TEST CONNECT")
                 }

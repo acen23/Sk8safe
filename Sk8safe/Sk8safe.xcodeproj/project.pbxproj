@@ -15,7 +15,6 @@
 		49CFAE472B16985A00C0D700 /* Sk8safeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE462B16985A00C0D700 /* Sk8safeUITestsLaunchTests.swift */; };
 		49CFAE562B16B07400C0D700 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE552B16B07400C0D700 /* HomeView.swift */; };
 		49CFAE582B16B0FC00C0D700 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE572B16B0FC00C0D700 /* DataModel.swift */; };
-		49CFAE5A2B16B10700C0D700 /* BTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE592B16B10700C0D700 /* BTModel.swift */; };
 		49CFAE5C2B16B11600C0D700 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5B2B16B11600C0D700 /* LocationModel.swift */; };
 		49CFAE5E2B16B30D00C0D700 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFAE5D2B16B30D00C0D700 /* DataView.swift */; };
 		49CFAE612B1FF4D100C0D700 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -51,7 +50,6 @@
 		49CFAE462B16985A00C0D700 /* Sk8safeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sk8safeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		49CFAE552B16B07400C0D700 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		49CFAE572B16B0FC00C0D700 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		49CFAE592B16B10700C0D700 /* BTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTModel.swift; sourceTree = "<group>"; };
 		49CFAE5B2B16B11600C0D700 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		49CFAE5D2B16B30D00C0D700 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		49CFAE602B1FF4D100C0D700 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				49CFAE572B16B0FC00C0D700 /* DataModel.swift */,
-				49CFAE592B16B10700C0D700 /* BTModel.swift */,
 				49CFAE5B2B16B11600C0D700 /* LocationModel.swift */,
 			);
 			path = Models;
@@ -305,7 +302,6 @@
 			files = (
 				49CFAE5E2B16B30D00C0D700 /* DataView.swift in Sources */,
 				49CFAE562B16B07400C0D700 /* HomeView.swift in Sources */,
-				49CFAE5A2B16B10700C0D700 /* BTModel.swift in Sources */,
 				49CFAE582B16B0FC00C0D700 /* DataModel.swift in Sources */,
 				49CFAE5C2B16B11600C0D700 /* LocationModel.swift in Sources */,
 				49CFAE2A2B16985700C0D700 /* Sk8safeApp.swift in Sources */,
