@@ -153,7 +153,12 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
 
                 self.peripheral?.readValue(for: characteristic)
             }
+            // Enabling receiving feature
+            if characteristic.uuid == CBUUID(string: "57393a70-64a7-4d66-9892-9280a6b68bfd") { // BUTTON UUID
+                self.peripheral?.setNotifyValue(true, for: characteristic)
+            }
         }
+        
         
         if characteristics.count == characteristic_key.count { // discovered all expected characteristics
             // inform UI
@@ -173,12 +178,12 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
         if(characteristic_key[characteristic.uuid] == "SENSE"){
             // TODO: Change handling of receiving data
             c = loadVal(data: data)
-            if(c != 0){
-                addBump()
-                print("Sent true")
+            if(c == 0){
+                print("Sent false")
             }
             else{
-                print("Sent false")
+                addBump()
+                print("Sent true")
             }
         }
         else{
