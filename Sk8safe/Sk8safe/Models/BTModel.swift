@@ -11,13 +11,17 @@ import Foundation
 import SwiftUI
 import CoreBluetooth
 
-class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate, Report {
+class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     // CB objects
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral?
     
     // backend color components TODO: CHANGE THIS
     var c: CGFloat = 0
+    @Published var boo: Bool = false
+    
+    var someVariablePublisher: Published<Bool>.Publisher { $boo }
+    var someVariablePublisher2: Published<Bool>.Publisher { $connected }
     
     // UUID and characteristic organization
     let SERVICE_UUID: CBUUID = CBUUID(string: "d692a318-2485-4317-9cef-794a22ee7a3f")
@@ -124,6 +128,11 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
 
                 self.peripheral?.readValue(for: characteristic)
             }
+            
+            //enable receiving features
+            if characteristic.uuid == CBUUID(string: "57393a70-64a7-4d66-9892-9280a6b68bfd"){
+                self.peripheral?.setNotifyValue(true, for: characteristic)
+            }
         }
         
         if characteristics.count == characteristic_key.count { // discovered all expected characteristics
@@ -142,13 +151,15 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
         guard let data = characteristic.value else { return }
         print(data)
         if(characteristic_key[characteristic.uuid] == "SENSE"){
-            // TODO: Change handling of receiving data
+            print("Characteristic found!")
             c = loadVal(data: data)
             if(c != 0){
-                report(boo: true)
+                print("Reported true")
+                boo = true
             }
             else{
-                report(boo: false)
+                print("Reported false") // should never happen in theory
+                boo = false
             }
         }
         else{
@@ -157,10 +168,6 @@ class BTModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphera
             
         // inform UI to update to reflect computed property (color) change
         objectWillChange.send()
-    }
-    
-    func report(boo: Bool){
-        print("Reported \(boo)")
     }
     
     // TODO: Change handling of receiving data
