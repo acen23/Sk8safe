@@ -14,19 +14,25 @@ struct DataView: View {
     var body: some View {
         Map(coordinateRegion: $dm.currRegion, showsUserLocation: true,
             userTrackingMode: .constant(.follow), annotationItems: dm.annotations) { annotation in
-                    MapPin(coordinate: annotation.coordinate, tint: .blue)
+            MapAnnotation(coordinate: annotation.coordinate){
+                Circle()
+                    .foregroundColor(.red)
+                    .scaledToFit()
+                    .opacity(0.5)
+                    .frame(width: 30, height: 30)
+            }
         }
         .frame(width: 400, height: 300)
         Button(action:{
             dm.printLocation()
         }){
             Text("Check location")
-        }
+        }/*
         Button(action:{ // DELETE AFTER TESTING
             dm.addBump()
         }){
             Text("Add bump")
-        }
+        }*/
     }
 }
 
