@@ -178,7 +178,6 @@ class DataModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriphe
                 print("Sent true")
             }
             else{
-                addBump()
                 print("Sent false")
             }
         }
