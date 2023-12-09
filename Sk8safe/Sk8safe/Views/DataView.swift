@@ -33,6 +33,11 @@ struct DataView: View {
         }){
             Text("Add bump")
         }*/
+        Button(action:{
+            dm.clear()
+        }){
+            Text("Clear data")
+        }
     }
 }
 
